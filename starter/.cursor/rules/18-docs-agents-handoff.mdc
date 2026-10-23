@@ -1,0 +1,21 @@
+---
+description: How agents should update AGENTS.md and handoff notes when conventions change.
+alwaysApply: true
+---
+
+# Docs & Agent Handoff
+
+## When to edit AGENTS.md
+- New architectural invariant (auth model, package layout, "we use X not Y").
+- A decision that future sessions must not rediscover.
+- Do **not** dump ephemeral TODO lists into AGENTS.md — use issues/TODO.md.
+
+## Handoff format (multi-session work)
+At end of a substantial task, leave in PR or `TODO.md`:
+1. Done
+2. Not done / blocked
+3. Exact next command or file to open
+4. Assumptions made
+
+## Language
+- Match the user's language for chat; keep rule/code identifiers in English when that is the codebase norm.

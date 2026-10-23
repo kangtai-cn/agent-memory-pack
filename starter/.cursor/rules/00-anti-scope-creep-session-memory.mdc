@@ -1,0 +1,32 @@
+---
+description: Anti scope-creep and session-compression amnesia. Keep agent focused on the stated task; persist decisions in repo files so memory survives compaction.
+alwaysApply: true
+---
+
+# Anti Scope Creep & Session Memory
+
+## Core problem this rule solves
+Coding agents forget mid-session after context compression. They also expand scope ("while I'm here…"). Both waste tokens and break trust.
+
+## Hard rules
+1. **One task, one PR-sized change.** Do not refactor unrelated files, rename for taste, or "improve" code outside the request.
+2. **Before coding, write a 3-bullet plan** in the reply (or a short `TASK.md` / issue comment if the change spans sessions): Goal / Out of scope / Done when.
+3. **Persist durable decisions in the repo**, not only in chat:
+   - Architecture choices → `AGENTS.md` or `docs/decisions/`
+   - Temporary WIP notes → `TODO.md` or PR description (never secrets)
+4. **After any compaction or long pause**, re-read: `AGENTS.md`, relevant `.cursor/rules/*.mdc`, and the open TODO/PR before continuing.
+5. **If the user asks for X**, deliver X. Suggest Y as a follow-up sentence, do not implement Y unless asked.
+6. **No silent dependency upgrades**, framework migrations, or format-all unless requested.
+7. **When unsure**, ask one clarifying question OR pick the smallest reversible option and state the assumption.
+
+## Scope creep red flags (stop and check)
+- Touching >5 files for a one-line bugfix
+- Rewriting working tests "for cleanliness"
+- Adding a new library when stdlib / existing util works
+- Changing public API shape without an explicit request
+
+## Session handoff checklist
+- [ ] What was the original ask?
+- [ ] What is already committed / staged?
+- [ ] What is explicitly out of scope?
+- [ ] What file holds the next step if chat is lost?
