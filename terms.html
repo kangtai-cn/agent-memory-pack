@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms of Sale — Agent Memory Pack</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="index.html">Agent Memory Pack</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing</a>
+        <button type="button" class="lang-toggle" id="langToggle">中文</button>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap legal">
+    <h1>Terms of Sale</h1>
+    <p class="meta">Last updated: 2026-10-23 (Asia/Taipei)</p>
+
+    <div class="lang-en">
+      <h2>License</h2>
+      <p>Purchase grants a license under the product LICENSE: use in your and your clients’ projects; <strong>no resale</strong> of the pack as a competing digital product.</p>
+      <h2>Delivery</h2>
+      <p>Digital download after payment processed by <strong>Waffo Pancake</strong>. You are responsible for downloading and keeping your copy.</p>
+      <h2>No professional advice warranty</h2>
+      <p>The pack is provided “as is”. It is not a guarantee of secure or correct AI-generated code.</p>
+      <h2>Acceptable use</h2>
+      <p>Do not redistribute the paid ZIP publicly or via pirate mirrors.</p>
+      <h2>Payment</h2>
+      <p>Payments are processed by <strong>Waffo Pancake</strong>. Price: Full Bundle <strong>$29 USD one-time</strong> (optional CN mirror ¥99).</p>
+      <h2>Changes</h2>
+      <p>We may update the pack; paying customers in the stated update window receive update drops as described on the product page.</p>
+    </div>
+
+    <div class="lang-zh">
+      <h2>许可</h2>
+      <p>购买即获得产品 LICENSE 下的使用权：可用于自有与客户项目；<strong>禁止</strong>将本包装成竞品数字商品转售。</p>
+      <h2>交付</h2>
+      <p>经 <strong>Waffo Pancake</strong> 支付成功后数字下载。请自行下载并妥善保存。</p>
+      <h2>无专业建议保证</h2>
+      <p>本包按「现状」提供，不保证 AI 生成代码安全或正确。</p>
+      <h2>可接受使用</h2>
+      <p>禁止公开再分发付费 ZIP 或经盗版镜像传播。</p>
+      <h2>支付</h2>
+      <p>支付由 <strong>Waffo Pancake</strong> 处理。价格：完整 Bundle <strong>$29 美元一次性</strong>（可选国内镜像 ¥99）。</p>
+      <h2>变更</h2>
+      <p>我们可能更新产品；付费用户在约定更新窗口内按产品页说明收到更新包。</p>
+    </div>
+
+    <h2>Support / 支持</h2>
+    <p><a href="mailto:kangtai+amp@mail.grokbot.com">kangtai+amp@mail.grokbot.com</a> · <a href="refund.html">Refund policy</a></p>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="refund.html">Refunds</a>
+        <a href="mailto:kangtai+amp@mail.grokbot.com">kangtai+amp@mail.grokbot.com</a>
+      </div>
+      <p>© 2026 Agent Memory Pack · Payment via Waffo Pancake</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var btn = document.getElementById('langToggle');
+      var saved = localStorage.getItem('amp-lang');
+      function apply(lang) {
+        html.lang = lang;
+        btn.textContent = lang === 'zh' ? 'EN' : '中文';
+        localStorage.setItem('amp-lang', lang);
+      }
+      apply(saved === 'zh' || (!saved && /zh/i.test(navigator.language || '')) ? 'zh' : 'en');
+      btn.addEventListener('click', function () {
+        apply(html.lang === 'zh' ? 'en' : 'zh');
+      });
+    })();
+  </script>
+</body>
+</html>

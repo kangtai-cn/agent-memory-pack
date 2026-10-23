@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Refund Policy — Agent Memory Pack</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="index.html">Agent Memory Pack</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing</a>
+        <button type="button" class="lang-toggle" id="langToggle">中文</button>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap legal">
+    <h1>Refund Policy</h1>
+    <p class="meta">Last updated: 2026-10-23 (Asia/Taipei)</p>
+
+    <div class="lang-en">
+      <p>Because this is a <strong>digital download</strong> paid via <strong>Waffo Pancake</strong>:</p>
+      <ol>
+        <li>If the file is corrupted or the download fails, contact support within <strong>7 days</strong> with your order id — we will redeliver or refund.</li>
+        <li>If you purchased by mistake and have <strong>not</strong> substantially used/redistributed the materials, you may request a refund within <strong>7 days</strong>.</li>
+        <li>Chargebacks without contacting support first may result in revoked download access.</li>
+        <li>“I expected AI to write perfect code” is not a refund reason — see product disclaimer.</li>
+      </ol>
+    </div>
+
+    <div class="lang-zh">
+      <p>本产品为经 <strong>Waffo Pancake</strong> 支付的<strong>数字下载</strong>：</p>
+      <ol>
+        <li>文件损坏或下载失败：请在 <strong>7 天内</strong>凭订单号联系支持——我们将重新发放或退款。</li>
+        <li>误购且<strong>未</strong>实质使用/再分发材料：可在 <strong>7 天内</strong>申请退款。</li>
+        <li>未先联系支持即发起拒付，可能导致下载权限撤销。</li>
+        <li>「期望 AI 写出完美代码」不属于退款理由——见产品免责声明。</li>
+      </ol>
+    </div>
+
+    <h2>Contact / 联系</h2>
+    <p><a href="mailto:kangtai+amp@mail.grokbot.com">kangtai+amp@mail.grokbot.com</a></p>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="refund.html">Refunds</a>
+        <a href="mailto:kangtai+amp@mail.grokbot.com">kangtai+amp@mail.grokbot.com</a>
+      </div>
+      <p>© 2026 Agent Memory Pack · Payment via Waffo Pancake</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var btn = document.getElementById('langToggle');
+      var saved = localStorage.getItem('amp-lang');
+      function apply(lang) {
+        html.lang = lang;
+        btn.textContent = lang === 'zh' ? 'EN' : '中文';
+        localStorage.setItem('amp-lang', lang);
+      }
+      apply(saved === 'zh' || (!saved && /zh/i.test(navigator.language || '')) ? 'zh' : 'en');
+      btn.addEventListener('click', function () {
+        apply(html.lang === 'zh' ? 'en' : 'zh');
+      });
+    })();
+  </script>
+</body>
+</html>
