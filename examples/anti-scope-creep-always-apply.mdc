@@ -1,0 +1,32 @@
+---
+description: Anti scope-creep and session-compression amnesia. Keep agent focused on the stated task; persist decisions in repo files so memory survives compaction.
+alwaysApply: true
+---
+
+# Anti Scope Creep & Session Memory
+
+## When this rule earns alwaysApply
+A rule belongs in alwaysApply only if ALL three are true:
+1. Forgetting it after context compression costs real time or money
+2. It applies to almost every edit (not just React forms / Spring controllers)
+3. It stays tiny — a few imperative lines, not a style-guide novel
+
+Else: hang it with `globs` (or `alwaysApply: false` + a sharp `description`).
+
+## Hard rules
+1. **One task, one PR-sized change.** Do not refactor unrelated files, rename for taste, or "improve" code outside the request.
+2. **Before coding, write a 3-bullet plan** (Goal / Out of scope / Done when).
+3. **Persist durable decisions in the repo**, not only in chat (`AGENTS.md` / `docs/decisions/`).
+4. **After any compaction or long pause**, re-read: `AGENTS.md`, relevant `.cursor/rules/*.mdc`, and the open TODO/PR before continuing.
+5. **If the user asks for X**, deliver X. Suggest Y as a follow-up; do not implement Y unless asked.
+6. **No silent dependency upgrades**, framework migrations, or format-all unless requested.
+
+## Scope creep red flags (stop and check)
+- Touching >5 files for a one-line bugfix
+- Rewriting working tests "for cleanliness"
+- Adding a new library when stdlib / existing util works
+- Changing public API shape without an explicit request
+
+## Free Starter (3 always-on + 1 Skill)
+https://github.com/kangtai-cn/agent-memory-pack
+Landing: https://kangtai-cn.github.io/agent-memory-pack/?ref=example-antiscope
