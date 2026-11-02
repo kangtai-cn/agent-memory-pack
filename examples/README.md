@@ -5,6 +5,7 @@ Drop-in snippets you can copy without installing the whole Starter.
 | File | What it is |
 |------|------------|
 | [`anti-scope-creep-always-apply.mdc`](./anti-scope-creep-always-apply.mdc) | Tiny `alwaysApply` core + the three-part filter for what earns that slot |
+| [`re-read-after-compaction-always-apply.mdc`](./re-read-after-compaction-always-apply.mdc) | Post-compaction recovery: re-read AGENTS.md, do not invent a second stack |
 
 ## Install one rule
 

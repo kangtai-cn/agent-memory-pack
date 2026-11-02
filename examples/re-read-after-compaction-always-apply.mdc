@@ -1,0 +1,28 @@
+---
+description: After context compression, re-read repo memory before continuing. Prevents invented second stacks and forgotten conventions.
+alwaysApply: true
+---
+
+# Re-read After Compaction
+
+## Why this earns alwaysApply
+Forgetting repo conventions mid-session costs real time. It applies to almost every long edit. It stays tiny.
+
+## Hard rules
+1. **After any compaction, long pause, or "continue" handoff**, re-read before coding:
+   - `AGENTS.md` (or `CLAUDE.md` if that is the source of truth)
+   - Open TODO / PR description / decision notes in-repo
+   - The `.cursor/rules/*.mdc` that match the files you will touch
+2. **Do not invent a second stack.** If the repo uses TanStack Query, zod at the boundary, or Spring DTOs — keep that. Do not add a parallel data-fetching or validation style "while you are here."
+3. **Persist durable decisions on disk**, not only in chat. If you chose an approach, write one line into `AGENTS.md` or `docs/decisions/` before the next compaction can erase it.
+4. **If memory and the open files disagree**, stop and ask — do not silently override either.
+
+## Quick recovery checklist
+- [ ] Re-read AGENTS.md
+- [ ] Confirm the stated Goal / Out of scope / Done when
+- [ ] Confirm stack conventions for the files in scope
+- [ ] Continue only the requested change
+
+## Free Starter
+https://github.com/kangtai-cn/agent-memory-pack  
+Landing: https://kangtai-cn.github.io/agent-memory-pack/?ref=example-compaction
