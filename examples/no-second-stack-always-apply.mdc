@@ -1,0 +1,25 @@
+---
+description: Do not invent a second stack or parallel dependency after context compression. Keep the repo's chosen libraries.
+alwaysApply: true
+---
+
+# No Second Stack
+
+## Why this earns alwaysApply
+Inventing a parallel form library, fetch layer, or validation style mid-session costs real cleanup time. It applies to almost every feature edit. It stays tiny.
+
+## Hard rules
+1. **Before adding a dependency**, search the repo for the existing choice (package.json / pom.xml / build.gradle, imports in sibling files).
+2. **Reuse the stack already in the repo.** If the project uses TanStack Query, zod at the boundary, Spring DTOs, or one form library — keep that. Do not add a second option "while you are here."
+3. **If two patterns already coexist**, follow the one used by the files in scope. Do not "harmonize" the whole repo unless asked.
+4. **Suggest a migration as a follow-up**, never as a silent side quest inside a bugfix or small feature.
+
+## Red flags (stop)
+- Adding axios when fetch/TanStack Query is already wired
+- Adding a second form library next to the one in `src/`
+- Mixing Bean Validation + ad-hoc Map validators for the same API
+- New UI kit for one screen in an established design system
+
+## Free Starter
+https://github.com/kangtai-cn/agent-memory-pack
+Landing: https://kangtai-cn.github.io/agent-memory-pack/?ref=example-no-second-stack
