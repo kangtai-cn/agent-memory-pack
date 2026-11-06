@@ -1,0 +1,26 @@
+---
+description: Never invent APIs, endpoints, libraries, URLs, or credentials. Ask before destructive deletes or overwrites. Stops plausible hallucination mid-session.
+alwaysApply: true
+---
+
+# Verify — Don't Invent
+
+## Why this earns alwaysApply
+Invented endpoints and silent deletes cost real cleanup time. It applies to almost every edit. It stays tiny.
+
+## Hard rules
+1. **Do not invent** APIs, routes, SDK methods, env keys, URLs, or credentials that are not in the repo (or linked docs you actually read this turn).
+2. **If unsure, ask once** — or state a reversible assumption in one line — before writing code that depends on a missing surface.
+3. **Search first:** `rg` / package manifests / OpenAPI / existing controllers before adding a "new" client call.
+4. **Ask before destructive actions:** delete files, drop tables, rewrite git history, force-push, mass overwrite, or `rm -rf`. Prefer the smallest reversible change.
+5. **Never hardcode secrets.** Use existing env / secret patterns; if none exist, ask.
+
+## Red flags (stop)
+- A method name that appears only in your reply, not in the codebase
+- A URL or API key that "looks right" but was not provided
+- Deleting or renaming files outside the stated task
+- "I'll clean up these unused files" without an explicit ask
+
+## Free Starter
+https://github.com/kangtai-cn/agent-memory-pack
+Landing: https://kangtai-cn.github.io/agent-memory-pack/?ref=example-verify

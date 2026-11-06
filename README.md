@@ -24,6 +24,7 @@ Public product site + **free Starter** for [Agent Memory Pack](https://kangtai-c
 | [`examples/anti-scope-creep-always-apply.mdc`](./examples/anti-scope-creep-always-apply.mdc) | One task; no silent refactors |
 | [`examples/re-read-after-compaction-always-apply.mdc`](./examples/re-read-after-compaction-always-apply.mdc) | Re-read repo memory after compression |
 | [`examples/no-second-stack-always-apply.mdc`](./examples/no-second-stack-always-apply.mdc) | Do not invent a parallel dependency |
+| [`examples/verify-dont-invent-always-apply.mdc`](./examples/verify-dont-invent-always-apply.mdc) | Never invent APIs/URLs/env keys; ask before destructive deletes |
 
 ## Legal
 
